@@ -278,9 +278,6 @@ loadAgeBtn.TextSize = 16
 loadAgeBtn.Font = Enum.Font.FredokaOne
 loadAgeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 
-loadAgeBtn.MouseButton1Click:Connect(function()
-    
-
 -- ðŸ‘¤ Credit
 local credit = Instance.new("TextLabel", frame)
 credit.Size = UDim2.new(1, 0, 0, 20)
