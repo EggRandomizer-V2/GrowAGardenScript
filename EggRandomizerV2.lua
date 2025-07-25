@@ -268,7 +268,7 @@ autoBtn.MouseButton1Click:Connect(function()
     end)()
 end)
 
--- ✨ Cool Load Pet Age Script Button
+-- ✨ Cool Load Pet Spawner Script Button
 local loadAgeBtn = Instance.new("TextButton", frame)
 loadAgeBtn.Size = UDim2.new(1, -20, 0, 30)
 loadAgeBtn.Position = UDim2.new(0, 10, 1, -35)
