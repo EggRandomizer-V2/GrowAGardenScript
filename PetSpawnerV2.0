@@ -1,4 +1,4 @@
-qlocal Players = game:GetService("Players")
+local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
 
 local player = Players.LocalPlayer
@@ -23,7 +23,7 @@ frameCorner.CornerRadius = UDim.new(0, 10)
 
 -- Title Label
 local title = Instance.new("TextLabel")
-title.Text = "🐾 Pet SpawnerV2 🔥"
+title.Text = "Pet SpawnerV2 🔥"
 title.Font = Enum.Font.FredokaOne
 title.TextSize = 24
 title.TextColor3 = Color3.new(1, 1, 1)
@@ -64,7 +64,7 @@ local button = Instance.new("TextButton")
 button.Size = UDim2.new(0.9, 0, 0, 60)
 button.Position = UDim2.new(0.05, 0, 0.65, 0)
 button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-button.Text = "Spawn A Pet🐾"
+button.Text = "Spawn A Pet 🐾"
 button.Font = Enum.Font.FredokaOne
 button.TextSize = 24
 button.TextColor3 = Color3.new(1, 1, 1)
