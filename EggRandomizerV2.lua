@@ -161,7 +161,7 @@ screenGui.Name = "PetHatchGui"
 local frame = Instance.new("Frame")
 frame.Size = UDim2.new(0, 260, 0, 240)
 frame.Position = UDim2.new(0, 20, 0, 100)
-frame.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 139)
 frame.BorderSizePixel = 0
 frame.Parent = screenGui
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
@@ -198,7 +198,7 @@ end)
 local randomizeBtn = Instance.new("TextButton", frame)
 randomizeBtn.Size = UDim2.new(1, -20, 0, 50)
 randomizeBtn.Position = UDim2.new(0, 10, 0, 40)
-randomizeBtn.BackgroundColor3 = Color3.fromRGB(255, 140, 0)
+randomizeBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 randomizeBtn.Text = "🎲 Randomize Pets"
 randomizeBtn.TextSize = 20
 randomizeBtn.Font = Enum.Font.FredokaOne
@@ -211,7 +211,7 @@ end)
 local toggleBtn = Instance.new("TextButton", frame)
 toggleBtn.Size = UDim2.new(1, -20, 0, 40)
 toggleBtn.Position = UDim2.new(0, 10, 0, 100)
-toggleBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+toggleBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 toggleBtn.Text = "👁️ ESP: ON"
 toggleBtn.TextSize = 18
 toggleBtn.Font = Enum.Font.FredokaOne
@@ -237,7 +237,7 @@ end
 local autoBtn = Instance.new("TextButton", frame)
 autoBtn.Size = UDim2.new(1, -20, 0, 30)
 autoBtn.Position = UDim2.new(0, 10, 0, 145)
-autoBtn.BackgroundColor3 = Color3.fromRGB(80, 150, 60)
+autoBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 autoBtn.Text = "🔁 Auto Randomize: OFF"
 autoBtn.TextSize = 16
 autoBtn.Font = Enum.Font.FredokaOne
@@ -272,7 +272,7 @@ end)
 local loadAgeBtn = Instance.new("TextButton", frame)
 loadAgeBtn.Size = UDim2.new(1, -20, 0, 30)
 loadAgeBtn.Position = UDim2.new(0, 10, 1, -35)
-loadAgeBtn.BackgroundColor3 = Color3.fromRGB(100, 90, 200)
+loadAgeBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 loadAgeBtn.Text = "🕒 Load Pet Age 50 Script"
 loadAgeBtn.TextSize = 16
 loadAgeBtn.Font = Enum.Font.FredokaOne
