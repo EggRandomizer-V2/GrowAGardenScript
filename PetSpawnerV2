@@ -1,7 +1,6 @@
 local player = game.Players.LocalPlayer
-local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
-gui.Name = "EggRandomizerUI"
-gui.ResetOnSpawn = false
+local gui = Instance.new("ScreenGui")
+gui.Parent = player:WaitForChild("PlayerGui")  -- Wait ensures it loads
 
 -- Main Frame
 local mainFrame = Instance.new("Frame", gui)
