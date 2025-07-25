@@ -279,7 +279,7 @@ loadAgeBtn.Font = Enum.Font.FredokaOne
 loadAgeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 
 loadAgeBtn.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/EggRandomizer-V2/GrowAGardenScript/refs/heads/main/loader/EggRandomizer.lua"))()
+    
 
 -- ðŸ‘¤ Credit
 local credit = Instance.new("TextLabel", frame)
