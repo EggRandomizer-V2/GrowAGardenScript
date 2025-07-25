@@ -145,7 +145,7 @@ local function flashEffect(button)
 end
 
 local function countdownAndRandomize(button)
-    for i = 5, 1, -1 do
+    for i = 3, 1, -1 do
         button.Text = "🎲 Randomize in: " .. i
         wait(1)
     end
@@ -161,7 +161,7 @@ screenGui.Name = "PetHatchGui"
 local frame = Instance.new("Frame")
 frame.Size = UDim2.new(0, 260, 0, 240)
 frame.Position = UDim2.new(0, 20, 0, 100)
-frame.BackgroundColor3 = Color3.fromRGB(105, 80, 60)
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
 frame.BorderSizePixel = 0
 frame.Parent = screenGui
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
