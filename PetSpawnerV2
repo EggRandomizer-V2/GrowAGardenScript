@@ -1,62 +1,126 @@
-local player = game.Players.LocalPlayer
-local gui = Instance.new("ScreenGui")
-gui.Parent = player:WaitForChild("PlayerGui")  -- Wait ensures it loads
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
 
--- Main Frame
-local mainFrame = Instance.new("Frame", gui)
-mainFrame.Name = "MainFrame"
+local player = Players.LocalPlayer
+local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+gui.Name = "PetSpawnerGUI"
+gui.ResetOnSpawn = false
+
+-- Main frame
+local mainFrame = Instance.new("Frame")
 mainFrame.Size = UDim2.new(0, 300, 0, 150)
 mainFrame.Position = UDim2.new(0.5, -150, 0.3, 0)
-mainFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 255)
+mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 128)
 mainFrame.BorderSizePixel = 0
-mainFrame.BackgroundTransparency = 0
-mainFrame.ClipsDescendants = true
+mainFrame.Name = "MainFrame"
+mainFrame.Parent = gui
 mainFrame.Active = true
 mainFrame.Draggable = true
 
--- UI Corner
-local corner = Instance.new("UICorner", mainFrame)
-corner.CornerRadius = UDim.new(0, 12)
+-- UICorner
+local frameCorner = Instance.new("UICorner", mainFrame)
+frameCorner.CornerRadius = UDim.new(0, 10)
 
--- Title
-local title = Instance.new("TextLabel", mainFrame)
-title.Size = UDim2.new(1, 0, 0, 30)
-title.Position = UDim2.new(0, 0, 0, 5)
-title.BackgroundTransparency = 1
-title.Text = "📃 Pet Spawner Script 📌"
-title.TextColor3 = Color3.new(1, 1, 1)
+-- Title Label
+local title = Instance.new("TextLabel")
+title.Text = "🐾 Pet SpawnerV2 🔥"
 title.Font = Enum.Font.FredokaOne
-title.TextScaled = true
+title.TextSize = 24
+title.TextColor3 = Color3.new(1, 1, 1)
+title.BackgroundTransparency = 1
+title.Size = UDim2.new(1, -30, 0, 40)
+title.Position = UDim2.new(0, 5, 0, 0)
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.Parent = mainFrame
 
--- Subtitle
-local subtitle = Instance.new("TextLabel", mainFrame)
-subtitle.Size = UDim2.new(1, 0, 0, 20)
-subtitle.Position = UDim2.new(0, 0, 0, 35)
-subtitle.BackgroundTransparency = 1
-subtitle.Text = "Made by - ShinScriptz."
-subtitle.TextColor3 = Color3.fromRGB(200, 200, 255)
-subtitle.Font = Enum.Font.FredokaOne
-subtitle.TextScaled = true
+-- Subtitle Label
+local subTitle = Instance.new("TextLabel")
+subTitle.Text = "Made by - ShinScriptz."
+subTitle.Font = Enum.Font.FredokaOne
+subTitle.TextSize = 16
+subTitle.TextColor3 = Color3.fromRGB(200, 200, 255)
+subTitle.BackgroundTransparency = 1
+subTitle.Position = UDim2.new(0, 5, 0, 30)
+subTitle.Size = UDim2.new(1, -10, 0, 25)
+subTitle.TextXAlignment = Enum.TextXAlignment.Left
+subTitle.Parent = mainFrame
 
--- Randomize Button
-local button = Instance.new("TextButton", mainFrame)
-button.Size = UDim2.new(0.9, 0, 0, 50)
+-- Minimize Button
+local minimizeBtn = Instance.new("TextButton")
+minimizeBtn.Text = "-"
+minimizeBtn.Size = UDim2.new(0, 30, 0, 30)
+minimizeBtn.Position = UDim2.new(1, -35, 0, 5)
+minimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
+minimizeBtn.TextColor3 = Color3.new(1, 1, 1)
+minimizeBtn.Font = Enum.Font.FredokaOne
+minimizeBtn.TextSize = 20
+minimizeBtn.Parent = mainFrame
+
+local corner = Instance.new("UICorner", minimizeBtn)
+corner.CornerRadius = UDim.new(0, 6)
+
+-- Spawn Button
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(0.9, 0, 0, 60)
 button.Position = UDim2.new(0.05, 0, 0.65, 0)
-button.BackgroundColor3 = Color3.new(0, 0, 0)
-button.Text = "Spawn Kitsune"
-button.Text = "Spawn Raccon"
-button.Text = "Spawn Disco Bee"
-button.Text = Spawn Butterfly"
-button.TextColor3 = Color3.new(1, 1, 1)
+button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+button.Text = "🎲 Spawn Pet"
 button.Font = Enum.Font.FredokaOne
-button.TextScaled = true
-button.BorderSizePixel = 0
+button.TextSize = 24
+button.TextColor3 = Color3.new(1, 1, 1)
+button.Parent = mainFrame
 
-local buttonCorner = Instance.new("UICorner", button)
-buttonCorner.CornerRadius = UDim.new(0, 8)
+local btnCorner = Instance.new("UICorner", button)
+btnCorner.CornerRadius = UDim.new(0, 10)
 
--- Button Functionality Placeholder
+-- Content Holder (for toggling minimize)
+local contentElements = {subTitle, button}
+
+local isMinimized = false
+minimizeBtn.MouseButton1Click:Connect(function()
+	isMinimized = not isMinimized
+	for _, obj in ipairs(contentElements) do
+		obj.Visible = not isMinimized
+	end
+	if isMinimized then
+		mainFrame.Size = UDim2.new(0, 300, 0, 50)
+		minimizeBtn.Text = "+"
+	else
+		mainFrame.Size = UDim2.new(0, 300, 0, 150)
+		minimizeBtn.Text = "-"
+	end
+end)
+
+-- Toggle UI Visibility with RightShift
+local visible = true
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if input.KeyCode == Enum.KeyCode.RightShift and not gameProcessed then
+		visible = not visible
+		gui.Enabled = visible
+	end
+end)
+
+-- Functionality: When button is clicked
 button.MouseButton1Click:Connect(function()
-	print("Spawing Pets...")
-	-- Insert your randomization logic here
+	print("🎲 Spawn Pet Clicked")
+
+	-- Example effect (client-side dummy pet)
+	local pet = Instance.new("Part")
+	pet.Size = Vector3.new(2, 2, 2)
+	pet.Position = player.Character and player.Character:GetPivot().Position + Vector3.new(0, 5, 0) or Vector3.new(0, 10, 0)
+	pet.Anchored = true
+	pet.BrickColor = BrickColor.Random()
+	pet.Name = "FakePet"
+	pet.Parent = workspace
+
+	-- Optional: Add a name or decoration
+	local billboard = Instance.new("BillboardGui", pet)
+	billboard.Size = UDim2.new(0, 100, 0, 30)
+	billboard.AlwaysOnTop = true
+	local label = Instance.new("TextLabel", billboard)
+	label.Size = UDim2.new(1, 0, 1, 0)
+	label.BackgroundTransparency = 1
+	label.TextColor3 = Color3.new(1, 1, 0)
+	label.Text = "🐾 Spawned Pet"
+	label.TextScaled = true
 end)
