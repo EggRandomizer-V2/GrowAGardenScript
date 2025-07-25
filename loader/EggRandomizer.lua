@@ -277,9 +277,6 @@ loadAgeBtn.Text = "Load Pet Age 50 Script"
 loadAgeBtn.TextSize = 16
 loadAgeBtn.Font = Enum.Font.FredokaOne
 loadAgeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-
-loadAgeBtn.MouseButton1Click:Connect(function()
-
     
 -- ðŸ‘¤ Credit
 local credit = Instance.new("TextLabel", frame)
