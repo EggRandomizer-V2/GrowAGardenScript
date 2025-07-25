@@ -218,7 +218,7 @@ toggleBtn.Font = Enum.Font.FredokaOne
 toggleBtn.TextColor3 = Color3.new(1, 1, 1)
 toggleBtn.MouseButton1Click:Connect(function()
     espEnabled = not espEnabled
-    toggleBtn.Text = espEnabled and "ðŸ‘ï¸ ESP: ON" or "ðŸ‘ï¸ ESP: OFF"
+    toggleBtn.Text = espEnabled and "ESP: ON" or "ESP: OFF"
     for _, egg in pairs(getPlayerGardenEggs(60)) do
         if espEnabled then
             applyEggESP(egg, truePetMap[egg])
@@ -252,14 +252,14 @@ local bestPets = {
 
 autoBtn.MouseButton1Click:Connect(function()
     autoRunning = not autoRunning
-    autoBtn.Text = autoRunning and "ðŸ” Auto Randomize: ON" or "ðŸ” Auto Randomize: OFF"
+    autoBtn.Text = autoRunning and "Auto Randomize: ON" or "Auto Randomize: OFF"
     coroutine.wrap(function()
         while autoRunning do
             countdownAndRandomize(randomizeBtn)
             for _, petName in pairs(truePetMap) do
                 if bestPets[petName] then
                     autoRunning = false
-                    autoBtn.Text = "ðŸ” Auto Randomize: OFF"
+                    autoBtn.Text = "Auto Randomize: OFF"
                     return
                 end
             end
@@ -287,7 +287,7 @@ local credit = Instance.new("TextLabel", frame)
 credit.Size = UDim2.new(1, 0, 0, 20)
 credit.Position = UDim2.new(0, 0, 0, 22)
 credit.BackgroundTransparency = 1
-credit.Text = "Made by - munkizzz"
+credit.Text = "Made by - ShinScriptz 🔥"
 credit.Font = Enum.Font.FredokaOne
 credit.TextSize = 14
 credit.TextColor3 = Color3.fromRGB(200, 200, 200)
