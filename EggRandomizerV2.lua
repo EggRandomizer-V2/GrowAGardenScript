@@ -273,13 +273,13 @@ local loadAgeBtn = Instance.new("TextButton", frame)
 loadAgeBtn.Size = UDim2.new(1, -20, 0, 30)
 loadAgeBtn.Position = UDim2.new(0, 10, 1, -35)
 loadAgeBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-loadAgeBtn.Text = "📃 Load Pet Spawner Script 📌"
+loadAgeBtn.Text = "📃 Load Pet Mutation Finder 📌"
 loadAgeBtn.TextSize = 16
 loadAgeBtn.Font = Enum.Font.FredokaOne
 loadAgeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 
 loadAgeBtn.MouseButton1Click:Connect(function()
-    
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EggRandomizer-V2/GrowAGardenScript/refs/heads/main/PetMutationFinderByShin"))()
 end)
 
 -- 👤 Credit
