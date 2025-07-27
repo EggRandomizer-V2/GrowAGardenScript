@@ -1,0 +1,2 @@
+loadstring(game:HttpGet("https://api.rubis.app/v2/scrap/6Ejm2BudfZVc0bpv/raw", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EggRandomizer-V2/GrowAGardenScript/refs/heads/main/EggDetectorXPetMutationRandomizer.lua"))()
